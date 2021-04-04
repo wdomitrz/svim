@@ -8,13 +8,15 @@
 set -e
 
 if [ "$#" -ne 1 ]; then
-    echo "One argument expected [user@]host:[dir]"
+    echo "One argument expected [user@]host[:dir]"
     exit 1
 fi
 
 scp_path="$1"
 # Split scp_path by ":" to get [user@]host and dir.
 IFS=":" read -r host dir <<< "${scp_path}"
+# Reassign scp_path to ensure that it has ":".
+scp_path="$host:$dir"
 
 # Create directory in which the remote directory will be mounted.
 tempdir="$(mktemp --directory)"

@@ -3,7 +3,7 @@ Simple script to mimic Visual Studio Code Remote - SSH in vim.
 
 ## Usage
 ```shell
-svim [user@]host:[dir]
+svim [user@]host[:dir]
 ```
 
 ## Installation
