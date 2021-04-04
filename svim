@@ -17,7 +17,7 @@ scp_path="$1"
 IFS=":" read -r host dir <<<"${scp_path}"
 
 # Create directory in which the remote directory will be mounted.
-tempdir=`mktemp --directory`
+tempdir=$(mktemp --directory)
 
 # Mount the remote directory and get there.
 sshfs "${scp_path}" "${tempdir}"
