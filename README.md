@@ -43,3 +43,6 @@ Using plugins on remote system.
 
 ## Possible problems
 Libraries and packages installed remotely will not be detected by your local plugins and language servers.
+
+## Compatibility
+Tested with [neovim v0.4.4](https://github.com/neovim/neovim/releases/tag/v0.4.4).
