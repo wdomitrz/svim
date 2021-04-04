@@ -2,7 +2,7 @@
 Simple script to mimic Visual Studio Code Remote - SSH in vim.
 
 ## Usage
-```
+```shell
 svim [user@]host:[dir]
 ```
 
@@ -10,7 +10,7 @@ svim [user@]host:[dir]
 
 ### For current user
 Put `svim` in `~/.local/bin/`.
-```
+```shell
 mkdir -p ~/.local/bin
 git clone https://github.com/wdomitrz/svim
 cd svim
@@ -19,7 +19,7 @@ cp svim ~/.local/bin/
 
 ### Globally (for every user)
 Put `svim` in `/usr/bin/`.
-```
+```shell
 git clone https://github.com/wdomitrz/svim
 cd svim
 sudo cp svim ~/.local/bin/
