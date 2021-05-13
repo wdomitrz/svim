@@ -14,7 +14,7 @@ fi
 
 scp_path="$1"
 # Split scp_path by ":" to get [user@]host and dir.
-IFS=":" read -r host dir <<< "${scp_path}"
+IFS=":" read -r host dir <<<"${scp_path}"
 # Reassign scp_path to ensure that it has ":".
 scp_path="$host:$dir"
 
@@ -27,7 +27,7 @@ cd "${tempdir}"
 # Set the command to run terminal remotely.
 vim -c "let terminal_shell = \"ssh \\\"${host}\\\" -t \'cd \\\"${dir}\\\" \; exec \\\"\$SHELL\\\" -il\'\""
 # After vim terminated, go back to the previous directory.
-cd - > /dev/null
+cd - >/dev/null
 # Umount the remote directory and remove the mount point.
 fusermount -u "${tempdir}"
 rmdir "${tempdir}"
